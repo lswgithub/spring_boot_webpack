@@ -1,5 +1,13 @@
 ## Getting started
 
+##git 
+>git init 
+>git add "filename"
+>git commit -m "comment"
+>git remote add "a github repository"
+git remote add origin https://github.com/lswgithub/spring_boot_webpack.git
+>git push -u origin master
+
 Enter the command as follows.
 
  1. mvn install
@@ -13,6 +21,8 @@ Enter the command as follows.
  
  Development URL : http://localhost:8081/hello<br>
  Production URL : http://localhost:8080/hello
+ 
+ 
  
  
  ## Official manual
