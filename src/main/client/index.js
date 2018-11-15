@@ -3,5 +3,7 @@ import $ from 'jquery'
 import moment from 'moment'
 
 $(function() {
-    $("strong > div").html(moment().format('MMMM Do YYYY, h:mm:ss a'));
+   // $("strong > div").html(moment().format('MMMM Do YYYY, h:mm:ss a'));
+    $("strong > div").html('test');
+	
 });
