@@ -28,7 +28,7 @@ npm install -g n npm stable
 n stable 10.13.0
  
  
- ## react env ##
+ ## react environment ##
 npm install create-react-app
 npm init react-app {app_folder_name}
 
