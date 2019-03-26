@@ -1,21 +1,39 @@
 package com.entity;
 
+import javax.persistence.*;
+// import javax.persistence.Column;
+// import javax.persistence.GeneratedValue;
+// import javax.persistence.GenerationType;
+import java.io.Serializable;
+import lombok.Data;
 
-import javax.persistence.Id;
-
-
-public class COMTCCMMNCODE {
+@Entity
+// @Data
+@Table(name="COMTCCMMNCODE")
+public class COMTCCMMNCODE implements Serializable {
+	private static final long serialVersionUID = 1L;
 	
-	private String codeId;
-	private String codeIdNm;
-	private String codeIdDc;
-	private String useAt;
-	private String clCode;
-	private String frstRegistPnttm;
-	private String frstRegisterId;
-	private String lastUpdtPnttm;
-	private String lastUpdustId;
-	
+	public COMTCCMMNCODE(){}
+	@Id
+	@Column(name = "CODE_ID", nullable=false)
+	public String codeId;
+	@Column(name = "CODE_ID_NM")
+	public String codeIdNm;
+	@Column(name = "CODE_ID_DC")
+	public String codeIdDc;
+	@Column(name = "USE_AT")
+	public String useAt;
+	@Column(name = "CL_CODE")
+	public String clCode;
+	@Column(name = "FRST_REGIST_PNTTM")
+	public String frstRegistPnttm;
+	@Column(name = "FRST_REGISTER_ID")
+	public String frstRegisterId;
+	@Column(name = "LAST_UPDT_PNTTM")
+	public String lastUpdtPnttm;
+	@Column(name = "LAST_UPDUSR_ID")
+	public String lastUpdustId;
+
 	public void setCodeId(String arg) {
 		this.codeId = arg;
 	}
@@ -43,8 +61,7 @@ public class COMTCCMMNCODE {
 	public void setLastUpdustId(String arg) {
 		this.lastUpdustId = arg;
 	}
-	
-	@Id
+
 	public String getCodeId () {
 		return codeId;
 	}

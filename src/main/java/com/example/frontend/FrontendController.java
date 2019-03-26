@@ -1,5 +1,6 @@
 package com.example.frontend;
 
+import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,9 +9,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import com.service.*;
 
 import com.entity.*;
-import com.service.*;
+//import com.service.*;
 
 
 @Controller
@@ -22,6 +24,18 @@ public class FrontendController {
 	// @Autowired
 	// private UserRepository userRepository;
 	private final AtomicLong counter = new AtomicLong();
+	
+	@Autowired
+	private COMTCCMMNCODERepository comtccmmncodeRepository;
+
+	@RequestMapping("/comtccmmncode")
+	// @ResponseBody
+	public String findAllComtccmmncode(Model model)
+	{
+		List<COMTCCMMNCODE> returnList = comtccmmncodeRepository.findAll();
+		model.addAttribute("returnList", returnList);
+		return "/common_code";
+	}
 	
 	@RequestMapping("/hello")
     public String home(Model model){
